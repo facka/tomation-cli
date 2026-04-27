@@ -1,12 +1,18 @@
 {
   "name": "__PROJECT_NAME__",
   "version": "1.0.0",
-  "description": "A Tomation automation project",
+  "description": "Starter template for Tomation automation framework",
+  "type": "module",
   "scripts": {
-    "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "tomation": "^0.0.12"
   },
   "devDependencies": {
-    "@playwright/test": "^1.44.0"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
   }
 }
