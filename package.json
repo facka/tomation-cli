@@ -1,0 +1,17 @@
+{
+  "name": "tomation-cli",
+  "version": "1.0.0",
+  "description": "CLI to create starter projects for the Tomation automation framework",
+  "type": "module",
+  "bin": {
+    "tomation": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.12"
+  }
+}
