@@ -31,15 +31,15 @@ npx tomation-cli create my-project
 This will:
 
 1. Create a new folder named `my-project` in the current directory.
-2. Copy the **playground template** (a ready-to-use Playwright test project) into the folder.
+2. Copy the **playground template** (a ready-to-use tomation test project) into the folder.
 3. Replace `__PROJECT_NAME__` placeholders with the actual project name.
 
 ## What you get
 
 The generated project uses a **playground template** that includes:
 
-- `package.json` — pre-configured with Playwright
-- `playwright.config.ts` — basic Playwright configuration
+- `package.json` — pre-configured with tomation
+- `tomation.config.ts` — basic tomation configuration
 - `tests/example.spec.ts` — a sample test to get you started
 - `README.md` — project-specific docs
 
@@ -48,9 +48,11 @@ The generated project uses a **playground template** that includes:
 ```bash
 cd my-project
 npm install
-npx playwright install
-npm test
+npm run live-server
 ```
+Install tomation-webext extension
+Open https://facka.github.io/tomation-playground/ in a browser
+Then open tomation web extension to coonect test scripts and run the tests
 
 ## Development
 

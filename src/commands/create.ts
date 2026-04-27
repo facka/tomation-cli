@@ -38,5 +38,5 @@ export function createProject(projectName: string): void {
   console.log("Next steps:");
   console.log(`  cd ${projectName}`);
   console.log("  npm install");
-  console.log("  npm test");
+  console.log("  npm run live-server");
 }
