@@ -51,7 +51,7 @@ function ensureViteInstalled() {
   try {
     execSync("npx --no-install vite --version", { stdio: "ignore", cwd: projectDir });
   } catch {
-    console.error("❌ Vite is not installed in this project. Run: pnpm add -D vite");
+    console.error("❌ Vite is not installed in this project. Run: pnpm install");
     process.exit(1);
   }
 }

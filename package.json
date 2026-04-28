@@ -1,6 +1,6 @@
 {
   "name": "tomation-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI to create starter projects for the Tomation automation framework",
   "type": "module",
   "bin": {
