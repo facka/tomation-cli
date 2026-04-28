@@ -52,7 +52,7 @@ npm run live-server
 ```
 Install tomation-webext extension
 Open https://facka.github.io/tomation-playground/ in a browser
-Then open tomation web extension to coonect test scripts and run the tests
+Then open tomation web extension to connect test scripts and run the tests
 
 ## Development
 

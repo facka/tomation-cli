@@ -39,4 +39,11 @@ export function createProject(projectName: string): void {
   console.log(`  cd ${projectName}`);
   console.log("  npm install");
   console.log("  npm run live-server");
+  console.log("");
+  console.log("-----------------------------------");
+  console.log("");
+  console.log("To run tests:");
+  console.log("  Install tomation-webext extension");
+  console.log("  Open https://facka.github.io/tomation-playground/ in a browser");
+  console.log("  Then open tomation web extension to connect test scripts and run the tests");
 }
