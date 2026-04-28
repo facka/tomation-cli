@@ -22,7 +22,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/main.ts'),
-      name: 'tomation-script', // global variable name, required for IIFE format
+      name: 'TomationScript', // global variable name, required for IIFE format
       formats: ['iife'],        // IIFE generates a plain JS file
       fileName: () => 'tests.bundle.js',
     },
@@ -31,7 +31,6 @@ export default defineConfig({
     rollupOptions: {
       external: [], // no external dependencies
     },
-    minify: 'esbuild',
     watch: {
       include: 'src/**',
       exclude: 'node_modules/**',
