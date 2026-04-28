@@ -1,25 +1,40 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
+import path from 'path';
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-// Vite configuration for Tomation starter template
-// Builds a single self-contained IIFE bundle for browser content script usage.
-// IIFE format wraps the entire bundle in an immediately-invoked function,
-// preventing top-level variables from leaking into the window scope.
+const __dirname = dirname(fileURLToPath(import.meta.url))
+export const r = (...args: string[]) => resolve(__dirname, ...args)
+
 export default defineConfig({
-  build: {
-    lib: {
-      // Entry point for the automation scripts
-      entry: 'src/main.ts',
-      formats: ['iife'],
-      name: 'tomation',
-      fileName: () => 'bundle.js',
-    },
-    // Output directory
-    outDir: 'dist',
-    // Do not minify — keeps the output readable for debugging
-    minify: true,
-    rollupOptions: {
-      // Bundle all dependencies inline — no external imports in the output
-      external: [],
+  resolve: {
+    alias: {
+      '~/': `${r('src')}/`,
     },
   },
-})
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 100,
+      binaryInterval: 300,
+    },
+  },
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/index.ts'),
+      name: '__PROJECT_NAME__', // global variable name, required for IIFE format
+      formats: ['iife'],        // IIFE generates a plain JS file
+      fileName: () => 'tests.bundle.js',
+    },
+    outDir: 'dist',
+    sourcemap: true,
+    rollupOptions: {
+      external: [], // no external dependencies
+    },
+    minify: 'esbuild',
+    watch: {
+      include: 'src/**',
+      exclude: 'node_modules/**',
+    },
+  },
+});

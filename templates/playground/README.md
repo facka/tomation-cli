@@ -18,10 +18,16 @@ npm install
 npm run dev
 ```
 
+or use tomation-cli command
+
+```bash
+tomation dev
+```
+
 This starts a Vite dev server that serves the automation bundle at:
 
 ```
-http://localhost:5173/src/main.ts
+http://localhost:5050/dist/tests.bundle.js
 ```
 
 ### 3. Open the playground
@@ -35,7 +41,7 @@ Open the playground page in your browser:
 Use the Tomation browser extension to load the bundle URL:
 
 ```
-http://localhost:5173/src/main.ts
+http://localhost:5050/dist/tests.bundle.js
 ```
 
 The extension will inject and execute the automation scripts on the playground page.
@@ -57,11 +63,11 @@ template/
 
 ## Scripts
 
-| Command           | Description                          |
-|-------------------|--------------------------------------|
-| `npm run dev`     | Start Vite dev server                |
-| `npm run build`   | Build the bundle to `dist/bundle.js` |
-| `npm run preview` | Preview the production build         |
+| Command           | Description                                |
+|-------------------|--------------------------------------------|
+| `tomation dev`     | Start Tomation dev server                 |
+
+`tomation-cli` has to be installed globally to have access to `tomation` command
 
 ## Tests
 

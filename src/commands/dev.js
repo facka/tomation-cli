@@ -8,7 +8,7 @@ import { exec, execSync } from "child_process";
 const projectDir = process.cwd();
 const srcDir = path.join(projectDir, "src");
 const distDir = path.join(projectDir, "dist");
-const fileToServe = path.join(distDir, "bundle.js");
+const fileToServe = path.join(distDir, "tests.bundle.js");
 const tomationConfigPath = path.join(projectDir, "tomation.config.ts");
 const packageJsonPath = path.join(projectDir, "package.json");
 const initialPort = Number.parseInt(process.env.PORT ?? "5050", 10) || 5050;
@@ -92,10 +92,10 @@ fs.watch(srcDir, { recursive: true }, (event, filename) => {
 
 // --- Serve the built file ---
 const server = http.createServer((req, res) => {
-  if (req.url === "/bundle.js") {
+  if (req.url === "/tests.bundle.js") {
     if (!fs.existsSync(fileToServe)) {
       res.writeHead(404, { "Content-Type": "text/plain" });
-      res.end("bundle.js not built yet");
+      res.end("tests.bundle.js not built yet");
       return;
     }
     res.writeHead(200, { "Content-Type": "application/javascript" });
@@ -121,6 +121,6 @@ server.on("error", err => {
 });
 
 server.listen(currentPort, () => {
-  console.log(`🚀 Live server running at http://localhost:${currentPort}/bundle.js`);
+  console.log(`🚀 Live server running at http://localhost:${currentPort}/tests.bundle.js`);
   buildBundle(); // initial build
 });

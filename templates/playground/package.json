@@ -1,5 +1,5 @@
 {
-  "name": "tomation-starter",
+  "name": "__PROJECT_NAME__",
   "version": "1.0.0",
   "description": "Starter template for Tomation automation framework",
   "type": "module",
