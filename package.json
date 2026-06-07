@@ -1,6 +1,6 @@
 {
   "name": "tomation-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "CLI to create starter projects for the Tomation automation framework",
   "license": "MIT",
   "type": "module",
