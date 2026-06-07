@@ -48,7 +48,7 @@ The generated project uses a **playground template** that includes:
 ```bash
 cd my-project
 npm install
-npm run live-server
+tomation dev
 ```
 Install tomation-webext extension
 Open https://facka.github.io/tomation-playground/ in a browser
